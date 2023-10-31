@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
     <section class="weatherbox">
         <div class="searchbox">
@@ -31,4 +34,19 @@
         </div>
     </section>
 </body>
+<script>
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=delhi&units=metric&appid=44b4f3fa12aaa416afe1a264af8e5e16";
+   async function checkWeather() {
+        const response = await fetch(apiUrl);
+        const data = response.json();
+        console.log(data);
+
+      document.querySelector(".city").innerHTML = data.name;
+      document.querySelector(".city").innerHTML = data.name;
+      console.log(data.wind);
+    }
+
+    checkWeather();
+</script>
+
 </html>
